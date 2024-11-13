@@ -9,7 +9,7 @@
         MaxHeight="1080" MaxWidth="1920"
         ResizeMode="NoResize"
         WindowState="Maximized">
-    <Grid>
-        <Frame Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+    <Grid Background="SandyBrown">
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

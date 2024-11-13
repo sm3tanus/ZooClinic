@@ -36,7 +36,7 @@ namespace ZooClinic.Pages
             }
             else if (App.authUser != null && App.authUser.IdSpecialty != 1)
             {
-                NavigationService.Navigate(new MainMenuPage());
+                NavigationService.Navigate(new AddAppoinpmentPage());
             }
             else
             {
@@ -44,7 +44,5 @@ namespace ZooClinic.Pages
             }
 
         }
-
-       
     }
 }
