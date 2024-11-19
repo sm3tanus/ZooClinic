@@ -61,6 +61,7 @@
         <!-- Кнопка Добавить -->
         <Button Name="AddAnimalBt" Grid.Row="6" Grid.Column="2" Content="Добавить животное"
                 FontSize="20" Padding="10" Height="50" Width="200" 
+                Background="#FF2D2112"
                 HorizontalAlignment="Center" Margin="0,30,0,0" Click="AddAnimalBt_Click"/>
     </Grid>
 </Page>

@@ -30,13 +30,9 @@ namespace ZooClinic.Pages
         {
             List<Veterinarians> veterinarians = Connection.clinic.Veterinarians.ToList();
             App.authUser = veterinarians.FirstOrDefault(i => i.Login == LoginTb.Text && i.Password == PasswordTb.Password);
-            if (App.authUser != null && App.authUser.IdSpecialty == 1)
+            if (App.authUser != null)
             {
-                NavigationService.Navigate(new RegisterPage());
-            }
-            else if (App.authUser != null && App.authUser.IdSpecialty != 1)
-            {
-                NavigationService.Navigate(new AddAppoinpmentPage());
+                NavigationService.Navigate(new MainMenuPage());
             }
             else
             {

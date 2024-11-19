@@ -10,15 +10,10 @@
 namespace ZooClinic.DB
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Vaccinations
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int ID { get; set; }
-        public Nullable<int> AnimalID { get; set; }
-        public Nullable<System.DateTime> VaccinationDate { get; set; }
-        public string VaccinationType { get; set; }
-    
-        public virtual Animals Animals { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

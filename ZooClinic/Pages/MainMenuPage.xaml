@@ -9,6 +9,20 @@
       Title="MainMenuPage">
 
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    >
+            <TextBlock FontSize="50"
+                       FontWeight="ExtraBold">Главное меню</TextBlock>
+            <Button Margin="20" Name="addAnimal" Click="addAnimal_Click" >Добавление животных</Button>
+            <Button Margin="20" Name="addOwner" Click="addOwner_Click">Добавление хозяина</Button>
+            <Button Margin="20" Name="addVeterinar" Click="addVeterinar_Click">Добавление врача</Button>
+            <Button Margin="20" Name="addAppointment" Click="addAppointment_Click">Добавление записи</Button>
+            <Button Margin="20" Name="statistic" Click="statistic_Click">Статистика</Button>
+
+
+
+
+        </StackPanel>
     </Grid>
 </Page>

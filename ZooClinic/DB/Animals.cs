@@ -18,7 +18,6 @@ namespace ZooClinic.DB
         public Animals()
         {
             this.Appointments = new HashSet<Appointments>();
-            this.Vaccinations = new HashSet<Vaccinations>();
         }
     
         public int ID { get; set; }
@@ -32,7 +31,5 @@ namespace ZooClinic.DB
         public virtual Owners Owners { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointments> Appointments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vaccinations> Vaccinations { get; set; }
     }
 }

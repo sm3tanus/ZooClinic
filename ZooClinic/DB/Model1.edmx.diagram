@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="57cc2c50c2e043bd915940416bc27acd" Name="Diagram1">
+        <EntityTypeShape EntityType="ZooClinic2Model.Animals" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZooClinic2Model.Appointments" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZooClinic2Model.Breeds" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZooClinic2Model.Owners" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZooClinic2Model.Speciality" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZooClinic2Model.Species" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZooClinic2Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZooClinic2Model.Veterinarians" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="ZooClinic2Model.FK__Animals__BreedID__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="ZooClinic2Model.FK__Animals__OwnerID__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="ZooClinic2Model.FK__Appointme__Anima__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="ZooClinic2Model.FK__Appointme__Veter__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="ZooClinic2Model.FK__Breeds__SpeciesI__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="ZooClinic2Model.FK_Veterinarians_Speciality" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

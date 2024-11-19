@@ -41,6 +41,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -64,6 +70,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\AnimalsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AppointmentsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -72,48 +86,72 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\AnimalsControl.xaml.cs">
+      <DependentUpon>AnimalsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AppointmentsControl.xaml.cs">
+      <DependentUpon>AppointmentsControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DB\Animals.cs">
-      <DependentUpon>ZooClinicModel.tt</DependentUpon>
+      <DependentUpon>ModelZoo.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Appointments.cs">
-      <DependentUpon>ZooClinicModel.tt</DependentUpon>
+      <DependentUpon>ModelZoo.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Breeds.cs">
-      <DependentUpon>ZooClinicModel.tt</DependentUpon>
+      <DependentUpon>ModelZoo.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Connection.cs" />
+    <Compile Include="DB\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ModelZoo.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelZoo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ModelZoo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelZoo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ModelZoo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelZoo.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DB\Owners.cs">
-      <DependentUpon>ZooClinicModel.tt</DependentUpon>
+      <DependentUpon>ModelZoo.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Speciality.cs">
-      <DependentUpon>ZooClinicModel.tt</DependentUpon>
+      <DependentUpon>ModelZoo.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Species.cs">
-      <DependentUpon>ZooClinicModel.tt</DependentUpon>
+      <DependentUpon>ModelZoo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\sysdiagrams.cs">
-      <DependentUpon>ZooClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Vaccinations.cs">
-      <DependentUpon>ZooClinicModel.tt</DependentUpon>
+      <DependentUpon>ModelZoo.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Veterinarians.cs">
-      <DependentUpon>ZooClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\ZooClinicModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ZooClinicModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\ZooClinicModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ZooClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\ZooClinicModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ZooClinicModel.edmx</DependentUpon>
+      <DependentUpon>ModelZoo.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -124,6 +162,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AddAppoinpmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AnimalsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AppointmentsListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,6 +185,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Statisctic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AddAnimalPage.xaml.cs">
@@ -146,6 +196,12 @@
     </Compile>
     <Compile Include="Pages\AddAppoinpmentPage.xaml.cs">
       <DependentUpon>AddAppoinpmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AnimalsListPage.xaml.cs">
+      <DependentUpon>AnimalsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppointmentsListPage.xaml.cs">
+      <DependentUpon>AppointmentsListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
@@ -155,6 +211,9 @@
     </Compile>
     <Compile Include="Pages\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Statisctic.xaml.cs">
+      <DependentUpon>Statisctic.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -173,12 +232,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DB\ZooClinicModel.edmx">
+    <EntityDeploy Include="DB\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ZooClinicModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DB\ZooClinicModel.edmx.diagram">
-      <DependentUpon>ZooClinicModel.edmx</DependentUpon>
+    <None Include="DB\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="DB\ModelZoo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelZoo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\ModelZoo.edmx.diagram">
+      <DependentUpon>ModelZoo.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -190,19 +256,29 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB\ZooClinicModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ZooClinicModel.Context.cs</LastGenOutput>
-      <DependentUpon>ZooClinicModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="DB\ZooClinicModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ZooClinicModel.edmx</DependentUpon>
-      <LastGenOutput>ZooClinicModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="DB\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\ModelZoo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelZoo.edmx</DependentUpon>
+      <LastGenOutput>ModelZoo.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\ModelZoo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelZoo.edmx</DependentUpon>
+      <LastGenOutput>ModelZoo.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

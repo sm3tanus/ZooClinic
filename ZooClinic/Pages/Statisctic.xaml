@@ -1,0 +1,23 @@
+﻿<Page x:Class="ZooClinic.Pages.Statisctic"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:ZooClinic.Pages"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      mc:Ignorable="d"
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="Statisctic">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center"
+                   FontSize="80">В нашей клинике:</TextBlock>
+        <lvc:PieChart Height="600" Width="600" LegendLocation="Bottom">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Title="Кошек" Values="{Binding Cats}" DataLabels="True" />
+                <lvc:PieSeries Title="Собак" Values="{Binding Dogs}" DataLabels="True" />
+                <lvc:PieSeries Title="Других" Values="{Binding Birds}" DataLabels="True" />
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
+    </Grid>
+</Page>

@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AnimalsListPage">
 
-    <Grid Background="#ffffff">
+    <Grid Background="SandyBrown">
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="30*"/>
@@ -16,19 +16,19 @@
 
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" BorderBrush="#04a0ff" BorderThickness="1.5" Margin="5">
+        <Border Grid.Row="0" BorderBrush="#FF7D5B33" BorderThickness="1.5" Margin="5">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal">
                 <TextBlock  Margin="10 0" FontWeight="ExtraBold" FontSize="30">Список животных</TextBlock>
             </StackPanel>
         </Border>
-        <Border Grid.Row="1" BorderBrush="#04a0ff"
+        <Border Grid.Row="1" BorderBrush="#FF7D5B33"
             BorderThickness="1.5" Margin="5">
             <ScrollViewer HorizontalScrollBarVisibility="Disabled">
                 <WrapPanel Name ="ServiceWpar" HorizontalAlignment="Center" ItemHeight="230" ItemWidth="680"/>
             </ScrollViewer>
         </Border>
         <Border Grid.Row="2">
-            <Button Background="Beige" Width="200">Выход</Button>
+            <Button Background="#FF2D2112" Width="200">Выход</Button>
         </Border>
     </Grid>
 </Page>

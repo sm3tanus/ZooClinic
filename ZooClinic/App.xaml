@@ -6,7 +6,12 @@
     <Application.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="20"></Setter>
-            <Setter Property="Foreground" Value="DarkGray"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Background" Value="#FF2D2112"></Setter>
         </Style>
         <Style TargetType="StackPanel">
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>

@@ -8,6 +8,7 @@ namespace ZooClinic.DB
 {
     public class Connection
     {
+        //public static ZooClinic2Entities clinic = new ZooClinic2Entities();
         public static ZooClinicEntities clinic = new ZooClinicEntities();
     }
 }

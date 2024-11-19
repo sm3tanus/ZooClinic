@@ -70,15 +70,6 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <EntityType Name="Vaccinations">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AnimalID" Type="int" />
-          <Property Name="VaccinationDate" Type="date" />
-          <Property Name="VaccinationType" Type="nvarchar" MaxLength="100" />
-        </EntityType>
         <EntityType Name="Veterinarians">
           <Key>
             <PropertyRef Name="ID" />
@@ -86,8 +77,8 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
           <Property Name="LastName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Login" Type="nchar" MaxLength="10" />
-          <Property Name="Password" Type="nchar" MaxLength="10" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="IdSpecialty" Type="int" />
         </EntityType>
         <Association Name="FK__Animals__BreedID__2C3393D0">
@@ -150,18 +141,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Vaccinati__Anima__34C8D9D1">
-          <End Role="Animals" Type="Self.Animals" Multiplicity="0..1" />
-          <End Role="Vaccinations" Type="Self.Vaccinations" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Animals">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Vaccinations">
-              <PropertyRef Name="AnimalID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Veterinarians_Speciality">
           <End Role="Speciality" Type="Self.Speciality" Multiplicity="0..1" />
           <End Role="Veterinarians" Type="Self.Veterinarians" Multiplicity="*" />
@@ -182,7 +161,6 @@
           <EntitySet Name="Speciality" EntityType="Self.Speciality" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Species" EntityType="Self.Species" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Vaccinations" EntityType="Self.Vaccinations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Veterinarians" EntityType="Self.Veterinarians" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Animals__BreedID__2C3393D0" Association="Self.FK__Animals__BreedID__2C3393D0">
             <End Role="Breeds" EntitySet="Breeds" />
@@ -203,10 +181,6 @@
           <AssociationSet Name="FK__Breeds__SpeciesI__286302EC" Association="Self.FK__Breeds__SpeciesI__286302EC">
             <End Role="Species" EntitySet="Species" />
             <End Role="Breeds" EntitySet="Breeds" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Vaccinati__Anima__34C8D9D1" Association="Self.FK__Vaccinati__Anima__34C8D9D1">
-            <End Role="Animals" EntitySet="Animals" />
-            <End Role="Vaccinations" EntitySet="Vaccinations" />
           </AssociationSet>
           <AssociationSet Name="FK_Veterinarians_Speciality" Association="Self.FK_Veterinarians_Speciality">
             <End Role="Speciality" EntitySet="Speciality" />
@@ -231,7 +205,6 @@
           <NavigationProperty Name="Breeds" Relationship="Self.FK__Animals__BreedID__2C3393D0" FromRole="Animals" ToRole="Breeds" />
           <NavigationProperty Name="Owners" Relationship="Self.FK__Animals__OwnerID__2B3F6F97" FromRole="Animals" ToRole="Owners" />
           <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__Anima__30F848ED" FromRole="Animals" ToRole="Appointments" />
-          <NavigationProperty Name="Vaccinations" Relationship="Self.FK__Vaccinati__Anima__34C8D9D1" FromRole="Animals" ToRole="Vaccinations" />
         </EntityType>
         <EntityType Name="Appointments">
           <Key>
@@ -294,16 +267,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Vaccinations">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AnimalID" Type="Int32" />
-          <Property Name="VaccinationDate" Type="DateTime" Precision="0" />
-          <Property Name="VaccinationType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Animals" Relationship="Self.FK__Vaccinati__Anima__34C8D9D1" FromRole="Vaccinations" ToRole="Animals" />
-        </EntityType>
         <EntityType Name="Veterinarians">
           <Key>
             <PropertyRef Name="ID" />
@@ -311,8 +274,8 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Login" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IdSpecialty" Type="Int32" />
           <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__Veter__31EC6D26" FromRole="Veterinarians" ToRole="Appointments" />
           <NavigationProperty Name="Speciality" Relationship="Self.FK_Veterinarians_Speciality" FromRole="Veterinarians" ToRole="Speciality" />
@@ -349,18 +312,6 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Appointments">
-              <PropertyRef Name="AnimalID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Vaccinati__Anima__34C8D9D1">
-          <End Role="Animals" Type="Self.Animals" Multiplicity="0..1" />
-          <End Role="Vaccinations" Type="Self.Vaccinations" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Animals">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Vaccinations">
               <PropertyRef Name="AnimalID" />
             </Dependent>
           </ReferentialConstraint>
@@ -409,7 +360,6 @@
           <EntitySet Name="Speciality" EntityType="Self.Speciality" />
           <EntitySet Name="Species" EntityType="Self.Species" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <EntitySet Name="Vaccinations" EntityType="Self.Vaccinations" />
           <EntitySet Name="Veterinarians" EntityType="Self.Veterinarians" />
           <AssociationSet Name="FK__Animals__BreedID__2C3393D0" Association="Self.FK__Animals__BreedID__2C3393D0">
             <End Role="Breeds" EntitySet="Breeds" />
@@ -422,10 +372,6 @@
           <AssociationSet Name="FK__Appointme__Anima__30F848ED" Association="Self.FK__Appointme__Anima__30F848ED">
             <End Role="Animals" EntitySet="Animals" />
             <End Role="Appointments" EntitySet="Appointments" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Vaccinati__Anima__34C8D9D1" Association="Self.FK__Vaccinati__Anima__34C8D9D1">
-            <End Role="Animals" EntitySet="Animals" />
-            <End Role="Vaccinations" EntitySet="Vaccinations" />
           </AssociationSet>
           <AssociationSet Name="FK__Appointme__Veter__31EC6D26" Association="Self.FK__Appointme__Veter__31EC6D26">
             <End Role="Veterinarians" EntitySet="Veterinarians" />
@@ -515,16 +461,6 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Vaccinations">
-            <EntityTypeMapping TypeName="ZooClinicModel.Vaccinations">
-              <MappingFragment StoreEntitySet="Vaccinations">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="AnimalID" ColumnName="AnimalID" />
-                <ScalarProperty Name="VaccinationDate" ColumnName="VaccinationDate" />
-                <ScalarProperty Name="VaccinationType" ColumnName="VaccinationType" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

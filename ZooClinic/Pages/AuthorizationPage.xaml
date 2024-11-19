@@ -16,7 +16,8 @@
                    >
             <StackPanel Orientation="Horizontal"
                         Margin="0 200 0 0">
-                <TextBlock FontSize="40">Логин</TextBlock>
+                <TextBlock FontSize="40"
+                           FontWeight="ExtraBold">Логин</TextBlock>
                 <TextBox Width="500"
                          Height="50"
                          Name="LoginTb"
@@ -24,7 +25,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Margin="0 20 0 0">
-                <TextBlock FontSize="40">Пароль</TextBlock>
+                <TextBlock FontSize="40" FontWeight="ExtraBold">Пароль</TextBlock>
                 <PasswordBox Width="480"
                          Height="50"
                          Name="PasswordTb"

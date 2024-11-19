@@ -32,7 +32,6 @@ namespace ZooClinic.DB
         public virtual DbSet<Speciality> Speciality { get; set; }
         public virtual DbSet<Species> Species { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Vaccinations> Vaccinations { get; set; }
         public virtual DbSet<Veterinarians> Veterinarians { get; set; }
     }
 }

@@ -23,6 +23,39 @@ namespace ZooClinic.Pages
         public MainMenuPage()
         {
             InitializeComponent();
+            if (App.authUser.IdSpecialty != 1)
+            {
+                addAnimal.Visibility = Visibility.Hidden;
+                addVeterinar.Visibility = Visibility.Hidden;
+                addOwner.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void addAnimal_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddAnimalPage());
+        }
+
+        private void addOwner_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addVeterinar_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new RegisterPage());
+        }
+
+        private void addAppointment_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddAppoinpmentPage());
+
+        }
+
+        private void statistic_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Statisctic());
+
         }
     }
 }
